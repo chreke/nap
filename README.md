@@ -16,8 +16,20 @@ To insert data into the database, issue a `POST` request. Given that nap is up a
 curl localhost:5000/messages --data '{"message": "Hello, world!"}'
 ```
 
-nap will reply with the following response:
+nap will reply with the following response body and a `Location` header:
 
 ```json
-{"message": "Hello, world!", "url": "/messages/<UUID>"}
+{"message": "Hello, world!", "id": "<UUID>"}
 ```
+
+You can then access the data you just inserted by issuing a `GET` request to the URL returned in the `Location` header:
+
+```sh
+curl localhost:5000/messages/<UUID> --data '{"message": "Hello, world!"}'
+```
+
+## Configuration
+
+## TODO
+
+ - [] Fully-qualified URLs
