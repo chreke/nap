@@ -6,7 +6,13 @@ nap id an automatic REST database
 
 ## Basic operation
 
-All data in nap is entered and retrieved using regular HTTP calls. Different operations can be performed by 
+All data in nap is entered and retrieved using regular HTTP calls. Different operations can be performed by using different HTTP verbs:
+
+ - `GET` `/collection` Lists all resources in the collection
+ - `GET` `/collection/id` Fetches the item in `collection` with the given `id`
+ - POST: Creates a new item in a collection and assigns it an ID. If the collection doesn't exist, it is created automatically
+ - PUT: Replaces the given resource or collection
+ - DELETE: Removes the given resource or collection
 
 ## Example
 
