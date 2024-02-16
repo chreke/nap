@@ -37,9 +37,3 @@ You can then access the data you just inserted by issuing a `GET` request to the
 ```sh
 curl localhost:5000/messages/ID
 ```
-
-## Configuration
-
-## TODO
-
- - [ ] Fully-qualified URLs
