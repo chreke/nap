@@ -11,7 +11,7 @@ All data in nap is entered and retrieved using regular HTTP calls. Different ope
  - `GET` `/collection` Lists all resources in the collection
  - `GET` `/collection/id` Fetches the item in `collection` with the given `id`
  - POST: Creates a new item in a collection and assigns it an ID. If the collection doesn't exist, it is created automatically
- - PUT: Replaces the given resource or collection
+ - PUT: Replaces the given resource or collection, or create it if it doesn't exist.
  - DELETE: Removes the given resource or collection
 
 ## Example
@@ -25,7 +25,7 @@ curl localhost:5000/messages --data '{"message": "Hello, world!"}'
 nap will reply with the following response body and a `Location` header:
 
 ```json
-{"message": "Hello, world!", "id": "<UUID>"}
+{"message": "Hello, world!"}
 ```
 
 You can then access the data you just inserted by issuing a `GET` request to the URL returned in the `Location` header:
