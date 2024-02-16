@@ -38,4 +38,4 @@ curl localhost:5000/messages/<UUID> --data '{"message": "Hello, world!"}'
 
 ## TODO
 
- - [] Fully-qualified URLs
+ - [ ] Fully-qualified URLs
