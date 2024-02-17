@@ -1,0 +1,20 @@
+{
+  "name": "nap",
+  "version": "0.0.1",
+  "description": "nap is an automatic REST database",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chreke/nap.git#main"
+  },
+  "author": "chreke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chreke/nap/issues"
+  },
+  "homepage": "https://github.com/chreke/nap/"
+}
