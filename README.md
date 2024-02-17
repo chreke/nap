@@ -4,17 +4,9 @@ nap id an automatic REST database
 
 ## Installation
 
-## Basic operation
+## Introduction
 
-All data in nap is entered and retrieved using regular HTTP calls. Different operations can be performed by using different HTTP verbs:
-
- - `GET` `/collection` Lists all resources in the collection
- - `GET` `/collection/id` Fetches the item in `collection` with the given `id`
- - POST: Creates a new item in a collection and assigns it an ID. If the collection doesn't exist, it is created automatically
- - PUT: Replaces the given resource or collection, or creates it if it doesn't exist.
- - DELETE: Removes the given resource or collection
-
-## Collections and resources
+nap is a database that exposes a HTTP interface. You interact with the database much like you would any REST API; data can be inserted at a given URL with `POST` and `PUT`, retrieved with `GET` and deleted with `DELETE`.
 
 nap has two basic data types: Collections and Resources. A Resource is a JSON value, and a Collection is a set of JSON values. Collections are created automatically whenever you `POST` to an URL that isn't already a collection.
 
@@ -37,3 +29,13 @@ You can then access the data you just inserted by issuing a `GET` request to the
 ```sh
 curl localhost:5000/messages/ID
 ```
+
+## Basic operation
+
+All data in nap is entered and retrieved using regular HTTP calls. Different operations can be performed by using different HTTP verbs:
+
+ - `GET` `/collection` Lists all resources in the collection
+ - `GET` `/collection/id` Fetches the item in `collection` with the given `id`
+ - `POST` Creates a new item in a collection and assigns it an ID. If the collection doesn't exist, it is created automatically
+ - `PUT` Replaces the given resource or collection, or creates it if it doesn't exist.
+ - `DELETE` Removes the given resource or collection
