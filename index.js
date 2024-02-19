@@ -13,7 +13,6 @@ const getPathComponents = path => {
   // TODO: Raise on empty string
   // TODO: Trailing and leading slash normalization
   const parts = path.split('/').filter(x => x !== '');
-  console.log(parts);
   return {
     collection: "/" + parts.slice(0, -1).join('/'),
     key: parts.length > 0 ? parts[parts.length - 1] : null
