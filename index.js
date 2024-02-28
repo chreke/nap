@@ -21,16 +21,20 @@ const getPathComponents = path => {
 
 // TODO: Raise an exception on empty string
 const getItem = (path) => {
-  const components = getPathComponents(path);
-  const collection = ITEMS[components.collection];
+  if (ITEMS[path] !== undefined) {
+    return Object.values(ITEMS[path]);
+  }
+  const pathComponents = getPathComponents(path);
+  const collection = ITEMS[pathComponents.collection];
+  console.log(pathComponents);
   if (collection === undefined) {
-    return null
+    return null;
   }
-  if (components.key === undefined) {
-    return collection
+  const item = collection[pathComponents.key];
+  if (item === undefined) {
+    return null;
   }
-  let item = collection[components.key];
-  return item !== undefined ? item : null
+  return item;
 }
 
 const insertItem = (path, item) => {
