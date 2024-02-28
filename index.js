@@ -11,7 +11,7 @@ const ITEMS = {
 
 const getPathComponents = path => {
   // TODO: Raise on empty string
-  // TODO: Trailing and leading slash normalization
+  // TODO: Trailing and leading slash normalization (can be done just by filtering out the empty string)
   const parts = path.split('/').filter(x => x !== '');
   return {
     collection: "/" + parts.slice(0, -1).join('/'),
@@ -20,7 +20,6 @@ const getPathComponents = path => {
 }
 
 // TODO: Raise an exception on empty string
-// TODO: Raise an exception if no item is found
 const getItem = (path) => {
   const components = getPathComponents(path);
   const collection = ITEMS[components.collection];
