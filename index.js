@@ -6,7 +6,7 @@ const HOSTNAME = '127.0.0.1';
 const PORT = 3000;
 
 const ITEMS = {
-  "/foo": {"bar": "A document"}
+  "/foo": {"bar": {"bar": "A document"}}
 };
 
 const getPathComponents = path => {
