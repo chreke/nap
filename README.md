@@ -41,10 +41,18 @@ curl localhost:5000/users --data '{"username": "chreke"}'
 This will create a `users` collection (unless it already exists) and insert an object that has an `username` key. The
 response also returns the URL of the newly created user.
 
-Given the newly created user URL, we can create a new collection that contains the user's blog posts:
+Let's create a blog post:
 
 ```sh
-curl localhost:5000/users/UUID/posts --data '{"title": "My first blog post", "createdAt": "2024-01-10", "content": "Hello, world!"}'
+curl localhost:5000/posts \
+    --data '{"author": "", "title": "My first blog post", "createdAt": "2024-01-10", "content": "Hello, world!"}'
+```
+
+We can also create a new collection that aggregates the blog posts of the user:
+
+```sh
+curl localhost:5000/users/UUID/posts \
+    --data '{"url": "", "title": "My first blog post"}'
 ```
 
 ## Basic operation
