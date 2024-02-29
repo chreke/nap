@@ -21,13 +21,30 @@ curl localhost:5000/messages --data '{"message": "Hello, world!"}'
 nap will reply with the following response body and a `Location` header:
 
 ```json
-{"message": "Hello, world!"}
+{"key": "", "url": ""}
 ```
 
 You can then access the data you just inserted by issuing a `GET` request to the URL returned in the `Location` header:
 
 ```sh
 curl localhost:5000/messages/ID
+```
+
+## Using collections
+
+Let's say that we want to create a blogging site, where users can upload blog posts. We start by creating a new user:
+
+```sh
+curl localhost:5000/users --data '{"username": "chreke"}'
+```
+
+This will create a `users` collection (unless it already exists) and insert an object that has an `username` key. The
+response also returns the URL of the newly created user.
+
+Given the newly created user URL, we can create a new collection that contains the user's blog posts:
+
+```sh
+curl localhost:5000/users/UUID/posts --data '{"title": "My first blog post", "createdAt": "2024-01-10", "content": "Hello, world!"}'
 ```
 
 ## Basic operation
